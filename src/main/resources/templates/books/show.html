@@ -9,7 +9,7 @@
 <p th:text="${book.getTitle() + ', ' + book.getAuthor() + ', ' + book.getYear()}">VALUE</p>
 
 <div th:if="${owner}">
-   <span th:text="${owner.getFullName()}">Person Name</span> <span> has the book now  </span>
+  <span>The book now at: </span> <span th:text="${owner.getFullName()}">Person Name</span>
 
   <form th:method="PATCH" th:action="@{/books/{id}/release(id=${book.getId()})}">
     <input type="submit" value="Release the book"/>
@@ -31,11 +31,11 @@
 <hr/>
 
 <form th:method="GET" th:action="@{/books/{id}/edit(id=${book.getId()})}">
-  <input type="submit" value="Edit"/>
+  <input type="submit" value="Редактировать"/>
 </form>
 
 <form th:method="DELETE" th:action="@{/books/{id}(id=${book.getId()})}">
-  <input type="submit" value="Delete"/>
+  <input type="submit" value="Удалить"/>
 </form>
 
 </body>
